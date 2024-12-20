@@ -8,6 +8,7 @@ const createProduct = async (req, res) => {
     try {
       const newProduct = new Product({
           ...req.body, 
+          image: req.file ? req.file.path : null, 
           author: authorId, 
       });
 
