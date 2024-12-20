@@ -29,16 +29,17 @@ const createProduct = async (req, res) => {
   const getProducts = async (req, res) => {
     try {
       const filter = {};
-  
-      if (req.query.brand) {
-        filter.brand = { $regex: req.query.brand, $options: "i" };
+      
+      if (req.query.category) {
+        filter.category = {$regex: req.query.category, $options: "i" };
       }
-      if (req.query.model) {
-        filter.type = { $regex: req.query.model, $options: "i" }; 
+      if (req.query.title) {
+        filter.title = {$regex: req.query.title, $options: "i" }; 
       }
       if (req.query.id) {
         filter._id = req.query.id; 
       }
+      console.log(filter)
   
 
       const products = await Product.find(filter).populate("author", "username email");
@@ -51,7 +52,7 @@ const createProduct = async (req, res) => {
   
 const updateProduct = async (req, res) => {
     try {
-        const product = await Product.findById(req.params.announceId);
+        const product = await Product.findById(req.params.productId);
 
         if(req.user.id !== product.author.toString()) {
           return res.status(403).send({ error: "You are not authorized to update this announcement" });
@@ -74,6 +75,7 @@ const updateProduct = async (req, res) => {
             new: true, // Return the updated document
           }
         );
+        console.log(updatedProduct)
     
         res.status(200).json({ result: true, announce: updatedProduct});
     
