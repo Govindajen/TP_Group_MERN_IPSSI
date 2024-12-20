@@ -1,14 +1,15 @@
 import { useEffect, useState } from 'react'
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
-import Login from './pages/Authentication/login';
+import Login from './pages/Authentication/';
 import Home from './pages/Home';
 import './App.css'
 import Wrapper from './components/Wrapper';
 
-import CreateAnnounce from './components/Announce/createAnnounce';
-import ModifyAnnounce from './components/Announce/modifyAnnounce';
+import CreateProduct from './components/Product/newProduct';
+import ModifyProduct from './components/Product/editProduct';
 
-import { AnnounceElement } from './components/Announce/announceCard';
+import { ProductElement } from './components/Product/productCard';
+
 
 function App({children}) {
 
@@ -38,23 +39,24 @@ function App({children}) {
             </Wrapper>
             } />
 
-          <Route path="/newannounce" element={
+          <Route path="/newproduct" element={
             <Wrapper>
-              <CreateAnnounce />
+              <CreateProduct />
             </Wrapper>
             } />
 
-          <Route path="/home/announce" element={
+          <Route path="/home/editproduct" element={
             <Wrapper>
-              <AnnounceElement />
+              <ModifyProduct />
             </Wrapper>
             } />
 
-          <Route path="/home/editannounce" element={
+          <Route path="/home/product" element={
             <Wrapper>
-              <ModifyAnnounce />
+              <ProductElement />
             </Wrapper>
             } />
+
 
           <Route path="/login" element={
               <Login />

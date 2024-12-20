@@ -1,0 +1,172 @@
+.homeContainer {
+    width: 100%;
+    height: 100%;
+    padding: 16px;
+    padding-top: 0;
+}
+
+.homeHeader {
+    width: 100%;
+    height: 8%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn {
+    background-color: slateblue;
+    padding: 16px;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    color: white;
+    width: 320px;
+    cursor: pointer;
+    margin: 10px 6px;
+}
+
+.recipeBtn {
+    background-color: slateblue;
+    padding: 16px;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    color: white;
+    width: 220px;
+    cursor: pointer;
+    margin: 10px 6px;
+}
+
+/* ---------------------------- */
+
+.homeContent {
+    width: 100%;
+    height: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+.recipeCards {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.sidebar {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 16px;
+    background-color: beige;
+    border-radius: 10px;
+    margin: 0 22px;
+}
+
+/* ------------------------------ */
+
+.inputContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.input {
+    width: 35%;
+    border: 1px solid beige;
+    border-radius: 10px;
+    padding: 16px;
+    margin: 3px 6px;
+}
+
+.titleIngredient {
+    width: 100%;
+}
+.descIngr {
+    width: 100%;
+    height: 250px;
+}
+
+.ingredientContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.ingredient {
+    width: 80%;
+    margin-left: 0;
+}
+.saveBtn {
+    background-color: slateblue;
+    padding: 16px;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    color: white;
+    width: 100px;
+    cursor: pointer;
+    margin: 0 6px;
+    width: 20%;
+    margin-right: 0;
+}
+
+.ingredientsList {
+    width: 100%;
+    height: 60%;
+    height: auto;
+    display: flex;
+    justify-content: start;
+    flex-wrap: wrap;
+    text-align: start;
+    flex-direction: column;
+}
+
+/* ------------------------------ */
+
+.selectSearch {
+    width: 10%;
+    height: 48px;
+    border: 1px solid slateblue;
+    background-color: slateblue;
+    border-right: 1px solid transparent;
+    border-radius: 10px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.inputSearch {
+    width: 25%;
+    height: 48px;
+    border: 1px solid slateblue;
+    background-color: rgb(148, 198, 255);
+    border-right: 1px solid transparent;
+    border-left: 1px solid transparent;
+    outline: none;
+}
+
+.btnSearch {
+    width: 10%;
+    height: 48px;
+    background-color: slateblue;
+    border: 1px solid slateblue;
+    border-radius: 10px;
+    border-left: 1px solid transparent;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    cursor: pointer;
+}
+
+
+
+.allAnnounceCards {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
