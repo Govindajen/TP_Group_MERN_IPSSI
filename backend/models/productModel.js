@@ -19,7 +19,7 @@ const productModel = new mongoose.Schema ({
     type: String, 
     required: true 
   },
-  img_url: { 
+  image: { 
     type: String
   },
   createAt : {
