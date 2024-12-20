@@ -46,14 +46,14 @@ export function ProductElement () {
 
 
     axios
-      .delete(`http://localhost:3001/announce/${productId}`, {
+      .delete(`http://localhost:3001/product/${productId}`, {
         headers: {
           Authorization: "Bearer " + localStorage.getItem("token"),
         },
       })
       .then((response) => {
         if (response.data.result) {
-          alert("Announcement deleted");
+          alert("Product deleted");
           window.location.assign("/home");
         } else {
           alert(response.data.error);
@@ -73,24 +73,23 @@ export function ProductElement () {
         </span>
         <div className="announceContent">
 
-        {product.image && (
-          <div>
-            <h3>Uploaded Image:</h3>
-            <img
-              src={`http://localhost:3001/${product.image}`} // Assuming the image is served by your backend
-              alt="Product"
-              style={{ maxWidth: "100%", height: "auto" }}
-            />
-          </div>
-        )}
+            {product.image && (
+              <div className="imageContainer">
+                <img
+                  src={`http://localhost:3001/${product.image}`} // Assuming the image is served by your backend
+                  alt="Product"
+                  className="imageProduct"
+                />
+              </div>
+            )}
 
-          <span className="announceDetails">
-            <h3>Category: {product.category}</h3>
-            <p><strong>Author:</strong> {product.author?.username}</p>
-          </span>
+            <div className="announceDetailsContainer">
+                <h3>Category: {product.category}</h3>
+                <p><strong>Author:</strong> {product.author?.username}</p>
+                <p className="descriptionChamp">{product.description}</p>
 
-          <p className="descriptionChamp">{product.description}</p>
-          
+            </div>
+
         </div>
         <p><strong>Created At:</strong> {new Date(product.createAt).toLocaleDateString()}</p>
         <span className="buttonsCard">

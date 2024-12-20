@@ -40,7 +40,6 @@ const createProduct = async (req, res) => {
       if (req.query.id) {
         filter._id = req.query.id; 
       }
-      console.log(filter)
   
 
       const products = await Product.find(filter).populate("author", "username email");
