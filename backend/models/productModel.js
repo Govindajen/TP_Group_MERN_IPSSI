@@ -19,6 +19,9 @@ const productModel = new mongoose.Schema ({
     type: String, 
     required: true 
   },
+  img_url: { 
+    type: String
+  },
   createAt : {
     type: Date,
     default: Date.now
@@ -27,14 +30,14 @@ const productModel = new mongoose.Schema ({
     type: String,
     required: true,
     enum: [
-      "Real Estate",
-      "Vehicles",
+      "Housing",
+      "Cars",
       "Electronics",
       "Furniture",
-      "Jobs",
+      "Jobs and Services",
       "Clothing",
-      "Services",
-      "Others",
+      "Sports and Leisure",
+      "Books and Media",
     ],
   }
 });

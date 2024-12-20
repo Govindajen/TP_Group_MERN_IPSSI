@@ -1,15 +1,18 @@
 const Product = require("../models/productModel");
 
 const createProduct = async (req, res) => {
-    const authorId = req.user.id; 
+    const authorId = req.user.id;
+
+    console.log(req.user, req.body)
     
     try {
       const newProduct = new Product({
           ...req.body, 
           author: authorId, 
       });
+
       
-      if (!newProduct.title || !newProduct.type || !newProduct.price || !newProduct.brand || !newProduct.model || !newProduct.km || !newProduct.year || !newProduct.description) {
+      if (!newProduct.title || !newProduct.category || !newProduct.price || !newProduct.description ) {
           return res.status(400).send("Merci de remplir tous les champs");
         }
         
