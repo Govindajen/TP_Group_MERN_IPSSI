@@ -8,7 +8,7 @@ const {
     getProducts,
     updateProduct,
     deleteProduct
-} = require("./controllers/announceControllers");
+} = require("./controllers/productControllers");
 
 router.post("/register", registerUser);
 router.post("/login", login);
