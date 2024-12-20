@@ -69,14 +69,22 @@ export function ProductElement () {
       <div className="announceCardPage">
         <span className="announceHeader">
           <h1>{product.title}</h1>
-          <h3>{product.category}</h3>
+          <p><strong>Price:</strong> {product.price}</p>
         </span>
-        <p><strong>Price:</strong> {product.price}</p>
-        <p><strong>Author:</strong> {product.author?.username}</p>
-        <p className="descriptionChamp">{product.description}</p>
-        {product.img_url && (
-          <img src={product.img_url} alt={product.title} className="productImage" />
-        )}
+        <div className="announceContent">
+
+          {product.img_url && (
+            <img src={product.img_url} alt={product.title} className="productImage" />
+          )}
+
+          <span className="announceDetails">
+            <h3>Category: {product.category}</h3>
+            <p><strong>Author:</strong> {product.author?.username}</p>
+          </span>
+
+          <p className="descriptionChamp">{product.description}</p>
+          
+        </div>
         <p><strong>Created At:</strong> {new Date(product.createAt).toLocaleDateString()}</p>
         <span className="buttonsCard">
           {

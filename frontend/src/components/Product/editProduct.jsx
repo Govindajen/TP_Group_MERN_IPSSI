@@ -106,14 +106,14 @@ export default function ModifyAnnounce() {
                         className="form-input"
                     >
                         <option value="">Select a category</option>
-                        <option value="housing">Housing</option>
-                        <option value="cars">Cars</option>
-                        <option value="electronics">Electronics</option>
-                        <option value="furniture">Furniture</option>
-                        <option value="jobsServices">Jobs and Services</option>
-                        <option value="clothing">Clothing</option>
-                        <option value="sportsLeisure">Sports and Leisure</option>
-                        <option value="booksMedia">Books and Media</option>
+                        <option value="Housing">Housing</option>
+                        <option value="Cars">Cars</option>
+                        <option value="Electronics">Electronics</option>
+                        <option value="Furniture">Furniture</option>
+                        <option value="JobsServices">Jobs and Services</option>
+                        <option value="Clothing">Clothing</option>
+                        <option value="SportsLeisure">Sports and Leisure</option>
+                        <option value="BooksMedia">Books and Media</option>
                     </select>
                 </div>
 
