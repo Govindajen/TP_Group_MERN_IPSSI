@@ -73,9 +73,16 @@ export function ProductElement () {
         </span>
         <div className="announceContent">
 
-          {product.img_url && (
-            <img src={product.img_url} alt={product.title} className="productImage" />
-          )}
+        {product.image && (
+          <div>
+            <h3>Uploaded Image:</h3>
+            <img
+              src={`http://localhost:3001/${product.image}`} // Assuming the image is served by your backend
+              alt="Product"
+              style={{ maxWidth: "100%", height: "auto" }}
+            />
+          </div>
+        )}
 
           <span className="announceDetails">
             <h3>Category: {product.category}</h3>

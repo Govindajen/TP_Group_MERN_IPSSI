@@ -13,6 +13,8 @@ export default function CreateAnnounce() {
     description: "",
     category: "", // Matches the updated schema
   });
+  const [image, setImage] = useState(null);
+  const [imagePreview, setImagePreview] = useState(null);
 
   useEffect(() => {
     // Check if the user is logged in and fetch their ID
@@ -35,8 +37,24 @@ export default function CreateAnnounce() {
     }));
   };
 
+  const handleImageChange = (e)=>{
+    const file = e.target.files[0];
+    setImage(file);
+    setImagePreview(file ? URL.createObjectURL(file) : null);
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+    e.preventDefault();
+    const data = new FormData();
+    data.append("title", formData.title);
+    data.append("price", formData.price);
+    data.append("category", formData.category);
+    data.append("description", formData.description);
+
+    if (image) {
+      data.append("image", image); // Attach the image file
+    }
 
     try {
       const token = localStorage.getItem("token");
@@ -45,7 +63,7 @@ export default function CreateAnnounce() {
         return;
       }
 
-      const response = await axios.post("http://localhost:3001/product", formData, {
+      const response = await axios.post("http://localhost:3001/product", data, {
         headers: {
           Authorization: "Bearer " + token,
         },
@@ -60,6 +78,8 @@ export default function CreateAnnounce() {
           description: "",
           category: "",
         });
+        setImage(null);
+        setImagePreview(null);
         Navigate("/home");
       }
     } catch (error) {
@@ -72,7 +92,22 @@ export default function CreateAnnounce() {
     <div className="form-container">
       <h1 className="form-heading">New product</h1>
       <form className="announce-form" onSubmit={handleSubmit}>
+      <div>
+                <label>Image:</label>
+                <input type="file" onChange={handleImageChange} />
+              </div>
+              {/* {imagePreview && (
+                <div>
+                  <h3>Image Preview:</h3>
+                  <img
+                    src={imagePreview}
+                    alt="Preview"
+                    style={{ maxWidth: "100%", height: "auto" }}
+                  />
+                </div>
+              )} */}
         <div className="form-group">
+
           <label htmlFor="title">Title</label>
           <input
             type="text"
